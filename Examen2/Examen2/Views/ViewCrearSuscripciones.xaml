@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewCrearSuscripciones"
+             BackgroundImageSource="https://img.freepik.com/foto-gratis/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion_1258-28312.jpg"
+             Title="Crear Suscripcion">
+    <ContentPage.BindingContext>
+        <local:ViewModelCrearSuscripcion></local:ViewModelCrearSuscripcion>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Nombre" Grid.Column="0" Grid.Row="0" 
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Nombre}" Grid.Column="1" Grid.Row="0"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Precio" Grid.Column="0" Grid.Row="1"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Precio}" Grid.Column="1" Grid.Row="1"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Imagen URL" Grid.Column="0" Grid.Row="3"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Imagen}" Grid.Column="1" Grid.Row="2"
+               BackgroundColor="White" TextColor="Black"/>
+
+
+        <Button Padding="10" Command="{Binding CrearSuscripcion}" Text="Crear Suscripcion" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+    </Grid>
+</ContentPage>

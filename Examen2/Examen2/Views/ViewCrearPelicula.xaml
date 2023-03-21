@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewCrearPelicula"
+             BackgroundImageSource="https://img.freepik.com/foto-gratis/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion_1258-28312.jpg"            
+             Title="Crear Pelicula">
+    
+    <ContentPage.BindingContext>
+        <local:ViewModelCrearPelicula></local:ViewModelCrearPelicula>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Nombre" Grid.Column="0" Grid.Row="0" 
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Nombre}" Grid.Column="1" Grid.Row="0"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Director" Grid.Column="0" Grid.Row="1"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Director}" Grid.Column="1" Grid.Row="1"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Productora" Grid.Column="0" Grid.Row="2"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Productora}" Grid.Column="1" Grid.Row="2"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Distribuidora" Grid.Column="0" Grid.Row="3"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Distribuidor}" Grid.Column="1" Grid.Row="3"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Genero" Grid.Column="0" Grid.Row="4"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Genero}" Grid.Column="1" Grid.Row="4"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Duracion" Grid.Column="0" Grid.Row="5"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Duracion}" Grid.Column="1" Grid.Row="5"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Imagen URL" Grid.Column="0" Grid.Row="3"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Imagen}" Grid.Column="1" Grid.Row="4"
+               BackgroundColor="White" TextColor="Black"/>
+
+
+        <Button Padding="10" Command="{Binding CrearPelicula}" Text="Crear Pelicula" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewMainAdmin"
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/fondo-lujoso-oro_361591-2535.jpg"
+             Title="MainAdmin">
+
+    <ContentPage.BindingContext>
+        <local:ViewModelMainAdmin></local:ViewModelMainAdmin>
+    </ContentPage.BindingContext>
+
+    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+        <!--Aqui son las columnas para los botones de seleccion principal-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="70" ></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Esta es la columna con la que se trabajara la posicion de los botones-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" ></ColumnDefinition>
+            <ColumnDefinition Width="150" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Padding="10" Command="{Binding Lista_Series}" Text="Series" Grid.Column="0" Grid.Row="0" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        
+        <Button Padding="10" Command="{Binding Lista_Peliculas}" Text="Peliculas" Grid.Column="0" Grid.Row="1" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        
+        <Button Padding="10" Command="{Binding Lista_Juegos}" Text="Juegos" Grid.Column="0" Grid.Row="2" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding Lista_Suscripciones}" Text="Suscripciones" Grid.Column="0" Grid.Row="3" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding CrearSeriesAdmin}" Text="Agregar Series" Grid.Column="1" Grid.Row="0" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        
+        <Button Padding="10" Command="{Binding CrearPeliculasAdmin}" Text="Agregar Pelicula" Grid.Column="1" Grid.Row="1"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        
+        <Button Padding="10" Command="{Binding CrearJuegosAdmin}" Text="Agregar Juegos" Grid.Column="1" Grid.Row="2" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding CrearSuscripcionAdmin}" Text="Agregar Suscripciones" Grid.Column="1" Grid.Row="3"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding CrearSerieSuscripcion}" Text="Agregar Serie a Suscripciones" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding CrearPeliculaSuscripcion}" Text="Agregar Peliculas a Suscripciones" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+        <Button Padding="10" Command="{Binding CrearJuegoSuscripcion}" Text="Agregar Juegos a Suscripciones" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+
+    </Grid>
+</ContentPage>

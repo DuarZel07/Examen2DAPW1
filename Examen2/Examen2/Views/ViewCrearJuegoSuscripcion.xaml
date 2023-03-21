@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewCrearJuegoSuscripcion"
+             BackgroundImageSource="https://img.freepik.com/foto-gratis/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion_1258-28312.jpg"                    
+             Title="Crear Juego suscripcion">
+    <ContentPage.BindingContext>
+        <local:ViewModelCrearJuegoSuscripcion></local:ViewModelCrearJuegoSuscripcion>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="ID Juego" Grid.Column="0" Grid.Row="0" 
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding IdJuego}" Grid.Column="1" Grid.Row="0"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="ID Suscripcion" Grid.Column="0" Grid.Row="1"
+               FontAttributes="Bold"  FontSize="Medium" TextColor="White"/>
+        <Entry Text="{Binding Idsuscripcion}" Grid.Column="1" Grid.Row="1"
+               BackgroundColor="White" TextColor="Black"/>
+
+        <Button Padding="10" Command="{Binding CrearSuscripcionJuego}" Text="Crear Juego Suscripcion" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+    </Grid>
+</ContentPage>

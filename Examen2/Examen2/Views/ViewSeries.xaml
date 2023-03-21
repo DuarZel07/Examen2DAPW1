@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewSeries"
+             BackgroundImageSource="https://img.freepik.com/foto-gratis/viejo-fondo-negro-textura-grunge-papel-tapiz-oscuro-pizarra-pizarra-pared-habitacion_1258-28312.jpg"
+             Title="Series"
+             >
+
+    <!--Content Page para traer el ViewModel-->
+    <ContentPage.BindingContext>
+        <local:ViewModelSeries></local:ViewModelSeries>
+    </ContentPage.BindingContext>
+    
+    <!--Grid Total para toda la pagina-->
+    <Grid Padding="15" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="500"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--Esto define los titulos para los datos-->
+        <StackLayout Grid.Row="0" Grid.Column="0" >
+            <Grid>
+                <!--Grid de las filas-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Grid de las Columnas-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="65"></ColumnDefinition>
+                    <ColumnDefinition Width="65"></ColumnDefinition>
+                    <ColumnDefinition Width="65"></ColumnDefinition>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="65"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <!--Texto de los titulos de la tabla-->
+                <Label Text="Nombre" FontAttributes="Bold" FontSize="Default"  Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Director" FontAttributes="Bold" FontSize="Default"   Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Genero" FontAttributes="Bold" FontSize="Default"  Grid.Row="0" Grid.Column="2"/>
+                <Label Text="Temp." FontAttributes="Bold" FontSize="Default"  Grid.Row="0" Grid.Column="3"/>
+                <Label Text="Caps" FontAttributes="Bold" FontSize="Default"  Grid.Row="0" Grid.Column="4"/>
+                <Label Text="Imagen" FontAttributes="Bold" FontSize="Default"  Grid.Row="0" Grid.Column="5"/>
+            </Grid>
+        </StackLayout>
+        <!--Collection Views de la lista de los datos-->
+        <CollectionView Grid.Row="1" Grid.Column="0"
+                        SelectionMode="Single"
+                        ItemsSource="{Binding ListSeries}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="65"></ColumnDefinition>
+                            <ColumnDefinition Width="65"></ColumnDefinition>
+                            <ColumnDefinition Width="65"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="65"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!--Texto de los datos de la tabla-->
+                        <Label Text="{Binding nombre_serie}" TextColor="White" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="{Binding director_serie}" TextColor="White" Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="{Binding Genero_serie}" TextColor="White" Grid.Row="0" Grid.Column="2"/>
+                        <Label Text="{Binding temporadas_serie}" TextColor="White" Grid.Row="0" Grid.Column="3"/>
+                        <Label Text="{Binding capitulos_serie}" TextColor="White" Grid.Row="0" Grid.Column="4"/>
+                        <Image Source="{Binding imagen}" Grid.Row="0" Grid.Column="5"></Image>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

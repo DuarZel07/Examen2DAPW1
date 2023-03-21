@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             Title="Registro"
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/fondo-lujoso-oro_361591-2535.jpg"
+             x:Class="Examen2.Views.ViewRegistro">
+
+    <ContentPage.BindingContext>
+        <local:ViewModelCrearUsuario></local:ViewModelCrearUsuario>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Username"  TextColor="White" 
+               FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+        <Entry Text="{Binding Nombre}" Keyboard="Email" BackgroundColor="White" TextColor="Black"
+               Grid.Column="1" Grid.Row="0"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Suscripcion"  TextColor="White" 
+               FontAttributes="Bold" Grid.Column="0" Grid.Row="1"/>
+        <Entry Text="{Binding Suscripcion}" Keyboard="Email" BackgroundColor="White" TextColor="Black"
+               Grid.Column="1" Grid.Row="1"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Email"  TextColor="White" 
+               FontAttributes="Bold" Grid.Column="0" Grid.Row="2"/>
+        <Entry Text="{Binding Email}" Keyboard="Email" BackgroundColor="White" TextColor="Black"
+               Grid.Column="1" Grid.Row="2"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Pass" TextColor="White" 
+               FontAttributes="Bold" Grid.Column="0" Grid.Row="3"/>
+        <Entry Text="{Binding Pass}" Keyboard="Text" IsPassword="True" BackgroundColor="White" TextColor="Black"
+               Grid.Column="1" Grid.Row="3"/>
+
+        <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Rol" TextColor="White" 
+               FontAttributes="Bold" Grid.Column="0" Grid.Row="4"/>
+        <Entry Text="{Binding Rol}" Keyboard="Text" BackgroundColor="White" TextColor="Black"
+               Grid.Column="1" Grid.Row="4"/>
+
+        <Button Padding="10" Command="{Binding CrearUsuario}" Text="Crear Usuario" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" 
+                FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+    </Grid>
+
+</ContentPage>

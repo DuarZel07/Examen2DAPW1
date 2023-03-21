@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.MainPage"
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/fondo-lujoso-oro_361591-2535.jpg"
+             >
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModelMainPage></local:ViewModelMainPage>
+    </ContentPage.BindingContext>
+
+
+
+    <Grid Margin="20" Padding="50">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1">
+
+            <Label Text="Usuario" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" 
+                   FontSize="Medium" TextColor="White"></Label>
+            <Entry Text="{Binding Usuario}" Keyboard="Email" BackgroundColor="White" TextColor="Black"></Entry>
+
+            <Label Text="Contrasena" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" 
+                   FontSize="Medium" TextColor="White"></Label>
+            <Entry Text="{Binding Pass}" Keyboard="Text" IsPassword="True" BackgroundColor="White" TextColor="Black"></Entry>
+
+            <Button Command="{Binding inicioSesion}" Text="Entrar" FontAttributes="Bold" CornerRadius="20" 
+                    BackgroundColor="DarkGoldenrod"></Button>
+            
+            <Button Command="{Binding registroUsuario}" Text="Registro" FontAttributes="Bold" CornerRadius="20" 
+                    BackgroundColor="DarkGoldenrod"></Button>
+
+
+            <Label Text="{Binding Resultado}"/>
+
+        </StackLayout>
+    </Grid>
+
+
+</ContentPage>

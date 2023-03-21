@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen2.ViewModel"
+             x:Class="Examen2.Views.ViewMainUser" 
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/fondo-lujoso-oro_361591-2535.jpg"             
+             Title="MainUser" >
+    
+    <ContentPage.BindingContext>
+        <local:ViewModelMainUser></local:ViewModelMainUser>
+    </ContentPage.BindingContext>
+
+    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+        <!--Aqui son las columnas para los botones de seleccion principal-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Esta es la columna con la que se trabajara la posicion de los botones-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Padding="10" Command="{Binding SuscripcionSerie}" Text="Paramount+" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                 FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        <Button Padding="10" Command="{Binding SuscripcionPelicula}" Text="HBO MAX" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                 FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+        <Button Padding="10" Command="{Binding SuscripcionJuego}" Text="XBOX GAME PASS" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+                 FontAttributes="Bold" CornerRadius="20" BackgroundColor="DarkGoldenrod"/>
+
+    </Grid>
+</ContentPage>
